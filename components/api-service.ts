@@ -17,6 +17,8 @@ export interface RouteResponse {
   estimatedTime: number
 }
 
+// TODO: Add actual RouteParams and RouteResponse types with area and GPX file data
+
 export async function generateRoute(request: RouteRequest): Promise<RouteResponse> {
   // Replace with your actual API endpoint
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://your-fastapi-backend.fly.dev"

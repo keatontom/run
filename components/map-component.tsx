@@ -11,6 +11,7 @@ export default function MapComponent() {
   const [locationInput, setLocationInput] = useState("")
   const [isLocating, setIsLocating] = useState(false)
 
+
   // Initialize map
   useEffect(() => {
     if (map.current || !mapContainer.current) return
@@ -84,7 +85,6 @@ export default function MapComponent() {
             },
             paint: {
               'line-color': '#ff9966',  // Orange-ish color for paths
-              'line-dasharray': [1, 1],
               'line-width': 2
             }
           },
@@ -340,8 +340,8 @@ export default function MapComponent() {
   }
 
   return (
-    <div className="w-full h-full relative">
-      <div ref={mapContainer} className="w-full h-full" />
+    <div className="relative h-screen w-full">
+      <div ref={mapContainer} className="h-full w-full" />
       
       {/* Location prompt - centered on all screen sizes */}
       {showLocationPrompt && (
@@ -401,16 +401,18 @@ export default function MapComponent() {
       
       {/* Search button to reopen location prompt - positioned differently on mobile vs desktop */}
       {!showLocationPrompt && (
-        <button
-          onClick={() => setShowLocationPrompt(true)}
-          className="fixed bottom-[26vh] md:bottom-4 left-2 sm:left-4 bg-white p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          aria-label="Search for location"
-          title="Search for location"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
+        <>
+          <button
+            onClick={() => setShowLocationPrompt(true)}
+            className="fixed bottom-[26vh] md:bottom-4 left-2 sm:left-4 bg-white p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Search for location"
+            title="Search for location"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </>
       )}
     </div>
   )

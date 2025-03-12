@@ -21,14 +21,10 @@ export default function Home() {
     traffic: "low",
   })
 
-  const [selectionCoordinates, setSelectionCoordinates] = useState<any>(null)
+  const [selectionCoordinates] = useState<any>(null)
 
   const handleParamsChange = (params: any) => {
     setRouteParams({ ...routeParams, ...params })
-  }
-
-  const handleSelectionChange = (coords: any) => {
-    setSelectionCoordinates(coords)
   }
 
   const handleGenerateRoute = async () => {
