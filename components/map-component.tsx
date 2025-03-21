@@ -216,7 +216,7 @@ export default function MapComponent() {
             'source-layer': 'place',
             layout: {
               'text-field': '{name:latin}',
-              'text-font': ['Open Sans Regular'],
+              'text-font': ['Noto Sans Regular'],
               'text-max-width': 8,
               'text-size': 14,
               'text-transform': 'uppercase'
@@ -237,7 +237,7 @@ export default function MapComponent() {
               'symbol-placement': 'line',
               'text-anchor': 'center',
               'text-field': '{name:latin}',
-              'text-font': ['Open Sans Regular'],
+              'text-font': ['Noto Sans Regular'],
               'text-offset': [0, 0.15],
               'text-size': 12
             },
@@ -249,7 +249,7 @@ export default function MapComponent() {
             }
           }
         ],
-        glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
+        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
         sprite: 'https://openmaptiles.github.io/osm-bright-gl-style/sprite'
       },
       center: [-74.0060, 40.7128], // New York City coordinates
